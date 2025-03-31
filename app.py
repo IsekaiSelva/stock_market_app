@@ -50,7 +50,7 @@ st.header("📑 View Stock Dataset")
 stock_choice = st.selectbox("Choose a dataset:", ["Amazon", "Apple", "Microsoft"])
 if stock_choice == "Amazon":
     try:
-        df = pd.read_csv("final_dataset_converted.csv")
+        df = pd.read_excel("final_dataset_converted.xlsx")
         st.success("Amazon dataset loaded successfully.")
         st.dataframe(df.head(50))
     except Exception as e:
@@ -140,7 +140,6 @@ st.download_button("📥 Download Simulated Portfolio Data", data=csv_data, file
 st.header("🧠 Explainability")
 st.image("shap.png", caption="Feature Attribution (Buy Action)", use_container_width=True)
 
-# --- PERFORMANCE SUMMARY (IN GRAY BOX) ---
 # --- PERFORMANCE SUMMARY (FULLY WRAPPED IN GRAY BOX) ---
 st.markdown("""
 <div style='
@@ -227,10 +226,8 @@ Includes:
 - Sentiment scores (FinBERT)
 - Piotroski fundamental scores
 
-### 🔍 4. Explainability via SHAP
-Clear interpretability using SHAP values ensures transparency in decisions.
 
-### 📊 5. Outperforms RL Benchmarks
+### 📊 4. Outperforms RL Benchmarks
 
 | Model | Sharpe | Drawdown | Return | Stability |
 |-------|--------|----------|--------|-----------|
@@ -240,7 +237,7 @@ Clear interpretability using SHAP values ensures transparency in decisions.
 | TD3   | 1.47   | -10.87%  | 40.3%  | High      |
 | **NEAT-DDPG** | **2.04** | **-10.5%** | **19.4%** | **High + Adaptive** |
 
-### 🔁 6. Generalizable & Future-Ready
+### 🔁 5. Generalizable & Future-Ready
 Can scale to multi-agent RL and LLM-integrated financial pipelines.
 """)
 
@@ -266,7 +263,7 @@ These will be addressed in upcoming work through multi-agent RL, faster evolutio
 
 # --- DOWNLOADS ---
 st.header("📥 Downloads")
-st.download_button("📉 Final Dataset (CSV)", open("final_dataset_converted.csv", "rb"), file_name="final_dataset.csv")
+st.download_button("📉 Final Dataset (CSV)", open("final_dataset_converted.xlsx", "rb"), file_name="final_dataset.xlsx")
 st.download_button("📄 Research Report (DOCX)", open("Updated_Paper_with_all_refernces.docx", "rb"), file_name="NEAT_DDPG_Final_Paper.docx")
 
 # --- PUBLICATION ---
@@ -276,4 +273,4 @@ st.markdown("Submitted to **ICACCP 2025 – International Conference on Advanced
 
 # --- FOOTER ---
 st.markdown("---")
-st.caption("👨‍💻 Built by Team 2 | 📘 Guided by Ms. Anisha Radhakrishnan | 🗓️ March 2025")
+st.caption("👨‍💻 Built by Arvind P, Harindandan N , Selvakumaran K , Moin Ashvath | 📘 Guided by Ms. Anisha Radhakrishnan | 🗓️ March 2025")
