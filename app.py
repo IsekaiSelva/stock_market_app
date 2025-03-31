@@ -29,13 +29,7 @@ st.write("""
 Traditional models fail to adapt to volatile market conditions. Our hybrid RL-evolutionary system overcomes this using multimodal inputs and self-evolving networks.
 """)
 
-# --- FEEDBACK ---
-st.header("🔁 What We Improved")
-st.write("""
-- Clearer architecture explanation  
-- Real-world evaluation metrics  
-- Improved visuals and SHAP integration  
-""")
+
 
 # --- ARCHITECTURE ---
 st.header("🧠 System Architecture")
